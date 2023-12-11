@@ -4,12 +4,12 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.0'
+        classpath 'com.android.tools.build:gradle:7.0.0'
     }
 }
 
 plugins {
-    id 'com.android.library' version '8.0.0'
+    id 'com.android.library' version '7.0.0'
     id 'org.jetbrains.kotlin.android' version '1.6.10'
     id 'maven-publish'
 }
@@ -18,10 +18,10 @@ android {
     namespace = "com.skyfishjy.ripplebackground"
 
     compileSdk = 34
-    
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     buildTypes {
@@ -38,6 +38,6 @@ repositories {
 }
 
 dependencies {
-    implementation("com.android.tools.build:gradle:8.0.0")
+    implementation("com.android.tools.build:gradle:7.0.0")
     // Add your other dependencies here
 }
