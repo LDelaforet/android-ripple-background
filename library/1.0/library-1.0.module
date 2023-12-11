@@ -1,0 +1,85 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.skyfishjy.ripplebackground",
+    "module": "library",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "fullReleaseApiElements-published",
+      "attributes": {
+        "com.android.build.api.attributes.ProductFlavor:mode": "full",
+        "mode": "full",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.6.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "library-1.0.aar",
+          "url": "library-1.0.aar",
+          "size": 763,
+          "sha512": "2cffbe015ccd692ede49a593de9a3984a953a264830ffe0458f05aa337da6375322a663661c92824b38bae2da6151651d5ec05d9ef8e5da56db0c4028a1ce0da",
+          "sha256": "d3111a85fe96631470759137a2807bac29fb300fe653290f44bee7c533dec4dc",
+          "sha1": "1105c95593942100e80bbb89245156e0e7ac422d",
+          "md5": "05a3355ff55cd2176e0c6891e276f5a9"
+        }
+      ]
+    },
+    {
+      "name": "fullReleaseRuntimeElements-published",
+      "attributes": {
+        "com.android.build.api.attributes.ProductFlavor:mode": "full",
+        "mode": "full",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.6.10"
+          }
+        },
+        {
+          "group": "com.google.guava",
+          "module": "guava",
+          "version": {
+            "requires": "30.1-jre"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "library-1.0.aar",
+          "url": "library-1.0.aar",
+          "size": 763,
+          "sha512": "2cffbe015ccd692ede49a593de9a3984a953a264830ffe0458f05aa337da6375322a663661c92824b38bae2da6151651d5ec05d9ef8e5da56db0c4028a1ce0da",
+          "sha256": "d3111a85fe96631470759137a2807bac29fb300fe653290f44bee7c533dec4dc",
+          "sha1": "1105c95593942100e80bbb89245156e0e7ac422d",
+          "md5": "05a3355ff55cd2176e0c6891e276f5a9"
+        }
+      ]
+    }
+  ]
+}
