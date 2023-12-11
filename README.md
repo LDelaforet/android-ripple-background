@@ -1,3 +1,9 @@
+
+# Closed, moved to https://github.com/LDelaforet/Android-RippleBackground due to complications
+
+
+
+
 # Android Ripple Background
 
 A beautiful ripple animation for your app. You can easily change its color, speed of wave, one ripple or multiple ripples. See demo below.
