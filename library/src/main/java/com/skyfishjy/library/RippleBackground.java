@@ -117,17 +117,41 @@ public class RippleBackground extends RelativeLayout{
         animatorSet.playTogether(animatorList);
     }
 
-    private class RippleView extends View{
+    public void changeRippleColor(int newColor) {
+        if (isRippleAnimationRunning()) {
+            // Change the color of the Paint object
+            paint.setColor(newColor);
+
+            // Invalidate the view to trigger a redraw with the new color
+            invalidate();
+
+            // Update the color for all existing RippleViews
+            for (RippleView rippleView : rippleViewList) {
+                rippleView.updateColor(newColor);
+            }
+        }
+    }
+
+    private class RippleView extends View {
+        private int rippleViewColor;
 
         public RippleView(Context context) {
             super(context);
             this.setVisibility(View.INVISIBLE);
+            this.rippleViewColor = rippleColor; // Set the initial color
+        }
+
+        public void updateColor(int newColor) {
+            rippleViewColor = newColor;
+            // Invalidate the view to trigger a redraw with the new color
+            invalidate();
         }
 
         @Override
         protected void onDraw(Canvas canvas) {
-            int radius=(Math.min(getWidth(),getHeight()))/2;
-            canvas.drawCircle(radius,radius,radius-rippleStrokeWidth,paint);
+            int radius = (Math.min(getWidth(), getHeight())) / 2;
+            paint.setColor(rippleViewColor); // Use the updated color
+            canvas.drawCircle(radius, radius, radius - rippleStrokeWidth, paint);
         }
     }
 
