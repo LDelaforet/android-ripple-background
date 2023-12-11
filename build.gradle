@@ -1,27 +1,16 @@
-buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0'
-    }
-}
-
 plugins {
-    id 'com.android.library' version '7.0.0'
+    id 'com.android.library' version '8.0.0'
     id 'org.jetbrains.kotlin.android' version '1.6.10'
     id 'maven-publish'
 }
 
 android {
     namespace = "com.skyfishjy.ripplebackground"
-
-    compileSdk = 34
+    compileSdk = 33
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     buildTypes {
@@ -29,6 +18,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    flavorDimensions 'mode'
+    productFlavors {
+        full {}
+        demo {}
     }
 }
 
@@ -38,6 +32,23 @@ repositories {
 }
 
 dependencies {
-    implementation("com.android.tools.build:gradle:7.0.0")
+    implementation 'com.google.guava:guava:30.1-jre'
     // Add your other dependencies here
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            fullRelease(MavenPublication) {
+                from components.fullRelease
+
+                groupId = 'com.skyfishjy.ripplebackground'
+                artifactId = 'library'
+                version = '1.0'
+            }
+        }
+        repositories {
+            mavenLocal() // Utilisez mavenLocal pour publier localement
+        }
+    }
 }
